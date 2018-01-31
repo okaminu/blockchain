@@ -1,15 +1,20 @@
 package lt.okaminu.blockchain
 
-class Blockchain(private val blocks: ArrayList<Block> = arrayListOf(Block("This is a genesis block", ""))) {
+class Blockchain {
+
+    private val blocks: ArrayList<Block> = arrayListOf(createBlock("Genesis block", ""))
 
     fun addBlock(data: String) {
-        val block = Block(data, blocks.last().hash)
+        blocks.add(createBlock(data, blocks.last().hash))
+    }
+
+    private fun createBlock(data: String, previousHash: String): Block {
+        val block = Block(data, previousHash)
 
         val (nounce, hash) = calculate(block)
         block.nounce = nounce
         block.hash = hash
-
-        blocks.add(block)
+        return block
     }
 
     fun printAllBlocks() = blocks.forEach {
