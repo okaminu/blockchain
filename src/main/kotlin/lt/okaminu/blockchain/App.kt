@@ -8,4 +8,8 @@ fun main(args: Array<String>) {
 
     blockchain.printAllBlocks()
 
+    blockchain.blocks[2].hash = "0000dddd"
+
+    blockchain.validate()
+
 }
