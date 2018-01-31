@@ -1,6 +1,6 @@
 package lt.okaminu.blockchain
 
-class Blockchain(private val blocks: ArrayList<Block> = ArrayList()) {
+class Blockchain(private val blocks: ArrayList<Block> = arrayListOf(Block("This is a genesis block"))) {
 
     fun addBlock(data: String) {
         blocks.add(Block(data))
