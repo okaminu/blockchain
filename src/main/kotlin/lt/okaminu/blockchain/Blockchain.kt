@@ -3,7 +3,13 @@ package lt.okaminu.blockchain
 class Blockchain(private val blocks: ArrayList<Block> = arrayListOf(Block("This is a genesis block"))) {
 
     fun addBlock(data: String) {
-        blocks.add(Block(data))
+        val block = Block(data)
+
+        val (nounce, hash) = calculate(block)
+        block.nounce = nounce
+        block.hash = hash
+
+        blocks.add(block)
     }
 
     fun printAllBlocks() = blocks.forEach {
