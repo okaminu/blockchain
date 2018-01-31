@@ -6,5 +6,6 @@ fun main(args: Array<String>) {
     blockchain.addBlock("Cake is a lie")
     blockchain.addBlock("Show me da way")
 
+    blockchain.printAllBlocks()
 
 }
