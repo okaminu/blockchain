@@ -19,4 +19,6 @@ private fun calculateHash(blockAsString: String): String {
     return digest.fold("", { str, byte -> str + "%x02".format(byte) })
 }
 
-private fun isHashValid(hash: String) = hash.startsWith("00")
+private const val difficulty = 2
+
+private fun isHashValid(hash: String) = hash.startsWith("0".repeat(difficulty))
