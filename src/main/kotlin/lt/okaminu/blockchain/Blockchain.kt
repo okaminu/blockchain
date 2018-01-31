@@ -11,7 +11,7 @@ class Blockchain {
     private fun createBlock(data: String, previousHash: String): Block {
         val block = Block(data, previousHash)
 
-        val (nounce, hash) = calculate(block)
+        val (nounce, hash) = calculateHashAndNounce(block)
         block.nounce = nounce
         block.hash = hash
         return block
