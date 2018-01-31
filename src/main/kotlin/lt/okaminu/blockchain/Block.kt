@@ -6,5 +6,6 @@ data class Block(
         val data: String,
         val timestamp: Long = Instant.now().epochSecond,
         val hash: String = "",
-        val previousHash: String = ""
+        val previousHash: String = "",
+        val nounce: Int = 0
 )

@@ -11,6 +11,7 @@ class Blockchain(private val blocks: ArrayList<Block> = ArrayList()) {
         println("Timestamp: ${it.timestamp}")
         println("Hash: ${it.hash}")
         println("Previous hash: ${it.previousHash}")
+        println("Nounce: ${it.nounce}")
         println()
     }
 }
